@@ -23,7 +23,7 @@
  */
 
 
-package com.cloudogu.blog.annotationprocessor.log;
+package main;
 
 import java.util.Set;
 import javax.annotation.processing.*;
@@ -31,7 +31,7 @@ import javax.lang.model.element.*;
 import javax.lang.model.SourceVersion;
 import javax.tools.Diagnostic;
 
-@SupportedAnnotationTypes("com.cloudogu.blog.annotationprocessor.log.Log")
+@SupportedAnnotationTypes("*")
 @SupportedSourceVersion(SourceVersion.RELEASE_8)
 public class LogProcessor extends AbstractProcessor {
 

@@ -23,32 +23,13 @@
  */
 
 
-package com.cloudogu.blog.annotationprocessor.log;
+package main;
 
-import java.util.Set;
-import javax.annotation.processing.*;
-import javax.lang.model.element.*;
-import javax.lang.model.SourceVersion;
-import javax.tools.Diagnostic;
+@Log
+public class Hello {
 
-@SupportedAnnotationTypes("com.cloudogu.blog.annotationprocessor.log.Log")
-@SupportedSourceVersion(SourceVersion.RELEASE_8)
-public class LogProcessor extends AbstractProcessor {
-
-    @Override
-    public synchronized void init(ProcessingEnvironment processingEnvironment) {
-        System.out.println("ciao");
-        super.init(processingEnvironment);
-    }
-
-    @Override
-    public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
-        for (TypeElement annotation : annotations) {
-            for (Element element : roundEnv.getElementsAnnotatedWith(annotation)) {
-                processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE, "found @Log at " + element);
-            }
-        }
-      	return true;
+    public static void main(String[] args) {
+        System.out.println("Hello");
     }
 
 }
